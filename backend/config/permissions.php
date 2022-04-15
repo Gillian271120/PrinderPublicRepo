@@ -5,7 +5,7 @@ return [
             'plugin' => 'DebugKit',
             'controller' => '*',
             'action' => '*',
-            'byPassAuth' => true,
+            'byPassAuth' => false,
         ],
         [
             'plugin' => 'CakeDC/Users',

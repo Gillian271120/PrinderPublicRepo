@@ -2,7 +2,11 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "../components/Home.vue";
 import Login from "../components/Login.vue";
 import Register from "../components/Register.vue";
-import Auth from "../cookies/auth"
+import Contact from "../components/Contact.vue";
+import Services from "../components/Services.vue";
+import Reservation from "../components/Reservation.vue";
+import AboutUs from "../components/AboutUs.vue";
+import Auth from "../cookies/auth";
 import M from "materialize-css";
 const routes = [
     {
@@ -10,7 +14,7 @@ const routes = [
         name: "Home",
         component: Home,
         meta: {
-            requiresAuth: true
+            requiresAuth: false
         }
     },
     {
@@ -22,9 +26,32 @@ const routes = [
         }
     },
     {
+        path: "/aboutUs",
+        name: "AboutUs",
+        component: AboutUs,
+        meta: {
+            requiresAuth: false
+        }
+    },
+    {
         path: "/register",
         name: "Register",
         component: Register,
+    },
+    {
+        path: "/contact",
+        name: "contact",
+        component: Contact,
+    },
+    {
+        path: "/services",
+        name: "services",
+        component: Services,
+    },
+    {
+        path: "/reservation",
+        name: "reservarion",
+        component: Reservation,
     },
 ];
  

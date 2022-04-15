@@ -63,8 +63,10 @@ export default {
     register() {
       axios.post('/api/auth/register', this.form).then((result) => {
         console.log(result);
+        console.log('salió');
       }).catch((err) => {
         console.error(err);
+        console.log('no salió');
       })
     },
     login() {
