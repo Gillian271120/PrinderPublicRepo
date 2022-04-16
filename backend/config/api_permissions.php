@@ -5,7 +5,7 @@ return [
             [
                 'role' => '*',
                 'service' => 'auth',
-                'action' => 'jwt_login',
+                'action' => ['jwt_login', 'register'],
                 'bypassAuth' => true,
             ],
             [

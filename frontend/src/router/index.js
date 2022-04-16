@@ -53,6 +53,7 @@ const routes = [
         name: "reservarion",
         component: Reservation,
     },
+    //https://stackoverflow.com/questions/40193634/vue-router-redirect-on-page-not-found-404
 ];
  
 const router = createRouter({

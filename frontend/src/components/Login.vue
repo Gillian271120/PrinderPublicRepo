@@ -10,6 +10,7 @@
               <div class="control">
                 <input v-model="form.username" class="input" type="text" placeholder="Text input">
                 <input v-model="form.password" class="input" type="password" placeholder="password">
+                <input v-model="form.password_confirm" class="input" type="password" placeholder="Confirm password">
               </div>
             </div>
           </div>
@@ -53,6 +54,7 @@ export default {
       form: {
         username: 'superadmin',
         password: 'password',
+        password_confirm: 'password'
       }
     }
   },
@@ -63,10 +65,8 @@ export default {
     register() {
       axios.post('/api/auth/register', this.form).then((result) => {
         console.log(result);
-        console.log('salió');
       }).catch((err) => {
         console.error(err);
-        console.log('no salió');
       })
     },
     login() {

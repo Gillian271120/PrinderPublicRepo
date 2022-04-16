@@ -5,13 +5,13 @@ return [
             'plugin' => 'DebugKit',
             'controller' => '*',
             'action' => '*',
-            'byPassAuth' => false,
+            'bypassAuth' => true,
         ],
         [
             'plugin' => 'CakeDC/Users',
             'controller' => 'Users',
             'action' => 'login',
-            'byPassAuth' => true,
+            'bypassAuth' => true,
         ],
         [
             'plugin' => false,
