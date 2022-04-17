@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 
-namespace App\Service\Home;
+namespace App\Service\Products;
 
 use Cake\ORM\TableRegistry;
 use CakeDC\Api\Service\Action\Action;
@@ -23,19 +23,11 @@ class DataAction extends Action
      * @return array|bool
      */
     public function execute()
-    {
-        
-/*      Añadir algo a la base de datos:
-        debug($this->getData());exit; 
-        $usersTable = TableRegistry::getTableLocator()->get('Users');
-        $usersTable->find();
-        
-        Esto sobre todo
-        $usersTable->newEmptyEntity(); 
-        */
-        return [
-            'title' => 'Whatever',
-        ];
+    { 
+        $productTable = TableRegistry::getTableLocator()->get('products');
+        $productTable->find()->toArray(); 
+
+        return $productTable->find()->toArray(); 
     }
 
 }

@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../components/Home.vue";
+import PageNotFound from "../components/PageNotFound.vue";
 import Login from "../components/Login.vue";
 import Register from "../components/Register.vue";
+import Products from "../components/Products.vue";
 import Contact from "../components/Contact.vue";
 import Services from "../components/Services.vue";
 import Reservation from "../components/Reservation.vue";
@@ -53,7 +55,16 @@ const routes = [
         name: "reservarion",
         component: Reservation,
     },
-    //https://stackoverflow.com/questions/40193634/vue-router-redirect-on-page-not-found-404
+    {
+        path: "/products",
+        name: "Products",
+        component: Products,
+    },
+    {
+        path: "/:pathMatch(.*)*",
+        name: "PageNotFound",
+        component: PageNotFound,
+    },
 ];
  
 const router = createRouter({

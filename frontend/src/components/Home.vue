@@ -27,8 +27,8 @@ export default {
     },
   },
   created: function(){
-      axios.post('/api/home/data' /*Para enviar datos :  , this.title  */).then((result) => {
-        
+      axios.post('/api/home/data',  /*Para enviar datos :  , this.title  */).then((result) => {
+        console.log(result);
         this.title = result.data.data.title;
       }).catch((err) => {
         console.error(err);

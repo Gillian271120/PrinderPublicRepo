@@ -13,6 +13,7 @@ return [
                 'service' => '*',
                 'action' => '*',
                 'method' => '*',
+                'bypassAuth' => true,
             ],
     ]
 ];
