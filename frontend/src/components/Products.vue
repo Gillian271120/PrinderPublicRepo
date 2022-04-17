@@ -4,7 +4,7 @@
   </div>
    <div class="row">
         <div v-for="product in products" :key="product.id"  class="col s6 m4">
-          <div class="card">
+          <div class="card hoverable">
             <div class="card-image">
               <img v-bind:src="product.image_name" v-bind:alt="product.name">
               <span class="card-title">{{product.name}}</span>
