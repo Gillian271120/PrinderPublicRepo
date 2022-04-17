@@ -8,35 +8,124 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" defer></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <style>
+      @media screen and (min-width: 992px){
+        a[class*="brand-logo"] {
+          margin-left: 30px;
+        }
+      }  
+      body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+
+      main {
+        flex: 1 0 auto;
+      }
+      ul[class*="right"] li a {
+        text-decoration: underline;
+        text-decoration-color: black;
+        font-weight: bold;
+      }
+      a[class*="brand-logo"] {
+          font-weight: bold;
+      }
+      div[class*="copyright"] {
+        border-top: 1px solid white;
+      }
+      i[class="material-icons"] {
+        color: black;
+      }
+    </style>
   </head>
   <body>
-    <nav>
-      <div class="nav-wrapper">
-        <a href="/" class="brand-logo"><img src="logo.png" alt="" width="180" height="65"></a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="/">Inicio</a></li>
-          <li><a href="/contact">Contacto</a></li>
-          <li><a href="/products">Productos</a></li>
-          <li><a href="/services">Servicios</a></li>
-          <li><a href="/login">Login</a></li>
-          <li><a href="/register">Register</a></li>
-          <li><a href="/reservation">Reservas</a></li>
-        </ul>
-      </div>
-    </nav>
-    <ul class="sidenav" id="mobile-demo">
-      <li><a href="/">Inicio</a></li>
-          <li><a href="/contact">Contacto</a></li>
-          <li><a href="/services">Servicios</a></li>
-          <li><a href="/login">Login</a></li>
-          <li><a href="/reservation">Reservas</a></li>
-    </ul>
+    <header>
+      <nav>
+        <div class="nav-wrapper orange lighten-5">
+          <a href="/" class="brand-logo black-text ">Prinder<!--<img src="logo.png" alt="" width="180" height="65">--></a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a class="black-text" href="/">Inicio</a></li>
+            <li><a class="black-text" href="/contact">Contacto</a></li>
+            <li><a class="black-text" href="/products">Productos</a></li>
+            <li><a class="black-text" href="/services">Servicios</a></li>
+            <li><a class="black-text" href="/login">Login</a></li>
+            <li><a class="black-text" href="/register">Register</a></li>
+            <li><a class="black-text" href="/reservation">Reservas</a></li>
+          </ul>
+        </div>
+      </nav>
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="/">Inicio</a></li>
+            <li><a href="/contact">Contacto</a></li>
+            <li><a href="/services">Servicios</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/reservation">Reservas</a></li>
+      </ul>
+  </header>
 
-    <div id="app"></div>
-    
-    <footer>
-      <h3>El footer</h3>
+    <main>
+
+      <div id="app"></div>
+      
+    </main>
+        
+    <footer class="page-footer black">
+      <div class="container">
+
+        <div class="row hide-on-med-and-up">
+          <div class="col s12">
+            <ul id="dropdown2" class="dropdown-content">
+              <li><a href="#!">one</a></li>
+              <li><a href="#!">two</a></li>
+              <li><a href="#!">three</a></li>
+            </ul>
+            <a class="btn dropdown-trigger" href="#!" data-target="dropdown2">Ayuda<i class="material-icons right">arrow_drop_down</i></a>
+          </div>
+          <div class="col s12"></div>
+          <div class="col s12"></div>
+          <div class="col s12"></div>
+        </div>
+
+        <div class="row hide-on-small-only">
+          <div class="col l3 m6 s12">
+            <h6 class="white-text">AYUDA</h6>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="">Aviso Legal</a></li>
+              <li><a class="grey-text text-lighten-3" href="">Política de Privacidad</a></li>
+              <li><a class="grey-text text-lighten-3" href="">Términos y Condiciones</a></li>
+            </ul>          
+          </div>
+          <div class="col l3 m6 s12">
+            <h6 class="white-text">CONTACTO</h6>
+            <ul>
+              <li class="grey-text text-lighten-3">922922922</li>
+              <li class="grey-text text-lighten-3">j@prinderenjoy.es</li>
+              <li class="grey-text text-lighten-3">g@prinderenjoy.es</li>
+            </ul>          </div>
+          <div class="col l3 m6 s12">
+            <h6 class="white-text">SÍGUENOS</h6>
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>            
+            </ul>          
+          </div>
+          <div class="col l3 m6 s12">
+            <h6 class="white-text">SOBRE PRINDER</h6>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="/contact">Contacto</a></li>
+              <li><a class="grey-text text-lighten-3" href="/">¿Quienes Somos?</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2022, Prinder
+        </div>
+      </div>
     </footer>
   </body>
 </html>

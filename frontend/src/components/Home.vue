@@ -1,7 +1,8 @@
 <template>
-  <div class="col s12 m6 offset-m3">
+  <div class="col s12">
     <h1>{{title}}</h1>
   </div>
+  <div class="col s12"></div>
 </template>
 
 <script>
@@ -36,3 +37,7 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+</style>
