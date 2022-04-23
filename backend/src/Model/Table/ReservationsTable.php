@@ -83,11 +83,6 @@ class ReservationsTable extends Table
             ->notEmptyString('service');
 
         $validator
-            ->dateTime('date')
-            ->requirePresence('date', 'create')
-            ->notEmptyDateTime('date');
-
-        $validator
             ->requirePresence('clientCreditCard', 'create')
             ->notEmptyString('clientCreditCard');
 

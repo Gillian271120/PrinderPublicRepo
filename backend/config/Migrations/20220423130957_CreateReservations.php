@@ -35,7 +35,7 @@ class CreateReservations extends AbstractMigration
             'limit' => 255,
             'null' => false,
         ]);
-        $table->addColumn('date', 'datetime', [
+        $table->addColumn('date', 'date', [
             'default' => null,
             'null' => false,
         ]);

@@ -41,4 +41,19 @@ class Reservation extends Entity
         'created' => true,
         'modified' => true,
     ];
+
+    public function frontendData(): array
+    {
+        return [
+            'clientDni' => $this->clientDni,
+            'clientFullname' => $this->clientFullname,
+            'clientTelephone' => $this->clientTelephone,
+            'service' => $this->service,
+            'date' => $this->date,
+            'clientCreditCard' => $this->clientCreditCard,
+            'subtotal' => $this->subtotal,
+            'created' => $this->created,
+            'modified' => $this->modified,
+        ];
+    }
 }

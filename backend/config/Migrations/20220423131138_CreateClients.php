@@ -27,13 +27,19 @@ class CreateClients extends AbstractMigration
         ]);
         $table->addColumn('Telephone', 'string', [
             'default' => null,
-            'limit' => 255,
+            'limit' => 15,
             'null' => false,
         ]);
-        $table->addColumn('creditCard', 'biginteger', [
+        $table->addColumn('creditCard', 'string', [
             'default' => null,
-            'limit' => 20,
+            'limit' => 12,
             'null' => false,
+        ]);
+        $table->addColumn('subtotal', 'decimal', [
+            'default' => null,
+            'null' => false,
+            'precision' => 10,
+            'scale' => 2,
         ]);
         $table->addColumn('created', 'datetime', [
             'default' => null,

@@ -34,5 +34,19 @@ class Client extends Entity
         'creditCard' => true,
         'created' => true,
         'modified' => true,
+        'subtotal' => true,
     ];
+
+    public function frontendData(): array
+    {
+        return [
+            'Dni' => $this->Dni,
+            'Fullname' => $this->Fullname,
+            'Telephone' => $this->Telephone,
+            'creditCard' => $this->creditCard,
+            'subtotal' => $this->subtotal,
+            'created' => $this->created,
+            'modified' => $this->modified,
+        ];
+    }
 }
