@@ -73,7 +73,6 @@ const router = createRouter({
 });
  
 router.beforeEach((to) => {
-    console.log(to);
     if (to.meta.requiresAuth && !Auth.get()) {
         return {
             name: 'Login',
@@ -81,9 +80,8 @@ router.beforeEach((to) => {
     }
 })
 router.beforeEach((to) => {
-    console.log(to);
     if (to.meta.onlyNoAuth && Auth.get()) {
-        M.toast({html: 'you are logged'})
+        M.toast({html: 'Ya tienes una sesión iniciada'})
         return {
             name: 'Home',
         }

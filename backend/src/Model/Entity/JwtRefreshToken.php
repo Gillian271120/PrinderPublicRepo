@@ -6,16 +6,17 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Product Entity
+ * JwtRefreshToken Entity
  *
- * @property int $id
- * @property string $name
- * @property string $price
- * @property string $image_name
+ * @property string $id
+ * @property string $model
+ * @property string $foreign_key
+ * @property string|null $token
+ * @property int $expired
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  */
-class Product extends Entity
+class JwtRefreshToken extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -27,23 +28,20 @@ class Product extends Entity
      * @var array
      */
     protected $_accessible = [
-        'name' => true,
-        'price' => true,
-        'image_name' => true,
+        'model' => true,
+        'foreign_key' => true,
+        'token' => true,
+        'expired' => true,
         'created' => true,
         'modified' => true,
     ];
+
     /**
-     * Checks if the token is expired
+     * Fields that are excluded from JSON versions of the entity.
      *
-     * @return bool
+     * @var array
      */
-    public function frontendData(): array
-    {
-        return [
-            'name' => $this->name,
-            'price' => $this->price,
-            'image_name' => $this->image_name,
-        ];
-    }
+    protected $_hidden = [
+        'token',
+    ];
 }

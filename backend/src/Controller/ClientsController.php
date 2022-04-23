@@ -4,12 +4,12 @@ declare(strict_types=1);
 namespace App\Controller;
 
 /**
- * Products Controller
+ * Clients Controller
  *
- * @property \App\Model\Table\ProductsTable $Products
- * @method \App\Model\Entity\Product[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
+ * @property \App\Model\Table\ClientsTable $Clients
+ * @method \App\Model\Entity\Client[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
-class ProductsController extends AppController
+class ClientsController extends AppController
 {
     /**
      * Index method
@@ -18,25 +18,25 @@ class ProductsController extends AppController
      */
     public function index()
     {
-        $products = $this->paginate($this->Products);
+        $clients = $this->paginate($this->Clients);
 
-        $this->set(compact('products'));
+        $this->set(compact('clients'));
     }
 
     /**
      * View method
      *
-     * @param string|null $id Product id.
+     * @param string|null $id Client id.
      * @return \Cake\Http\Response|null|void Renders view
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function view($id = null)
     {
-        $product = $this->Products->get($id, [
+        $client = $this->Clients->get($id, [
             'contain' => [],
         ]);
 
-        $this->set(compact('product'));
+        $this->set(compact('client'));
     }
 
     /**
@@ -46,58 +46,58 @@ class ProductsController extends AppController
      */
     public function add()
     {
-        $product = $this->Products->newEmptyEntity();
+        $client = $this->Clients->newEmptyEntity();
         if ($this->request->is('post')) {
-            $product = $this->Products->patchEntity($product, $this->request->getData());
-            if ($this->Products->save($product)) {
-                $this->Flash->success(__('The product has been saved.'));
+            $client = $this->Clients->patchEntity($client, $this->request->getData());
+            if ($this->Clients->save($client)) {
+                $this->Flash->success(__('The client has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The product could not be saved. Please, try again.'));
+            $this->Flash->error(__('The client could not be saved. Please, try again.'));
         }
-        $this->set(compact('product'));
+        $this->set(compact('client'));
     }
 
     /**
      * Edit method
      *
-     * @param string|null $id Product id.
+     * @param string|null $id Client id.
      * @return \Cake\Http\Response|null|void Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function edit($id = null)
     {
-        $product = $this->Products->get($id, [
+        $client = $this->Clients->get($id, [
             'contain' => [],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $product = $this->Products->patchEntity($product, $this->request->getData());
-            if ($this->Products->save($product)) {
-                $this->Flash->success(__('The product has been saved.'));
+            $client = $this->Clients->patchEntity($client, $this->request->getData());
+            if ($this->Clients->save($client)) {
+                $this->Flash->success(__('The client has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The product could not be saved. Please, try again.'));
+            $this->Flash->error(__('The client could not be saved. Please, try again.'));
         }
-        $this->set(compact('product'));
+        $this->set(compact('client'));
     }
 
     /**
      * Delete method
      *
-     * @param string|null $id Product id.
+     * @param string|null $id Client id.
      * @return \Cake\Http\Response|null|void Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
-        $product = $this->Products->get($id);
-        if ($this->Products->delete($product)) {
-            $this->Flash->success(__('The product has been deleted.'));
+        $client = $this->Clients->get($id);
+        if ($this->Clients->delete($client)) {
+            $this->Flash->success(__('The client has been deleted.'));
         } else {
-            $this->Flash->error(__('The product could not be deleted. Please, try again.'));
+            $this->Flash->error(__('The client could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);

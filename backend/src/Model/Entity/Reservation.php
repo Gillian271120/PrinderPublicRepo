@@ -6,16 +6,20 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Product Entity
+ * Reservation Entity
  *
  * @property int $id
- * @property string $name
- * @property string $price
- * @property string $image_name
+ * @property string $clientDni
+ * @property string $clientFullname
+ * @property string $clientTelephone
+ * @property string $service
+ * @property \Cake\I18n\FrozenTime $date
+ * @property int $clientCreditCard
+ * @property string $subtotal
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  */
-class Product extends Entity
+class Reservation extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -27,23 +31,14 @@ class Product extends Entity
      * @var array
      */
     protected $_accessible = [
-        'name' => true,
-        'price' => true,
-        'image_name' => true,
+        'clientDni' => true,
+        'clientFullname' => true,
+        'clientTelephone' => true,
+        'service' => true,
+        'date' => true,
+        'clientCreditCard' => true,
+        'subtotal' => true,
         'created' => true,
         'modified' => true,
     ];
-    /**
-     * Checks if the token is expired
-     *
-     * @return bool
-     */
-    public function frontendData(): array
-    {
-        return [
-            'name' => $this->name,
-            'price' => $this->price,
-            'image_name' => $this->image_name,
-        ];
-    }
 }

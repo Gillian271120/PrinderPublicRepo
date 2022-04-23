@@ -1,23 +1,31 @@
 <?php
 declare(strict_types=1);
 
-/**
- * Copyright 2010 - 2019, Cake Development Corporation (https://www.cakedc.com)
- *
- * Licensed under The MIT License
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright Copyright 2010 - 2018, Cake Development Corporation (https://www.cakedc.com)
- * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
- */
-
 namespace App\Model\Table;
 
-
+use Cake\ORM\Query;
+use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
+use Cake\Validation\Validator;
 
 /**
  * Products Model
+ *
+ * @method \App\Model\Entity\Product newEmptyEntity()
+ * @method \App\Model\Entity\Product newEntity(array $data, array $options = [])
+ * @method \App\Model\Entity\Product[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\Product get($primaryKey, $options = [])
+ * @method \App\Model\Entity\Product findOrCreate($search, ?callable $callback = null, $options = [])
+ * @method \App\Model\Entity\Product patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\Product[] patchEntities(iterable $entities, array $data, array $options = [])
+ * @method \App\Model\Entity\Product|false save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\Product saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\Product[]|\Cake\Datasource\ResultSetInterface|false saveMany(iterable $entities, $options = [])
+ * @method \App\Model\Entity\Product[]|\Cake\Datasource\ResultSetInterface saveManyOrFail(iterable $entities, $options = [])
+ * @method \App\Model\Entity\Product[]|\Cake\Datasource\ResultSetInterface|false deleteMany(iterable $entities, $options = [])
+ * @method \App\Model\Entity\Product[]|\Cake\Datasource\ResultSetInterface deleteManyOrFail(iterable $entities, $options = [])
+ *
+ * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
 class ProductsTable extends Table
 {
@@ -29,7 +37,44 @@ class ProductsTable extends Table
      */
     public function initialize(array $config): void
     {
+        parent::initialize($config);
 
+        $this->setTable('products');
+        $this->setDisplayField('name');
+        $this->setPrimaryKey('id');
+
+        $this->addBehavior('Timestamp');
     }
 
+    /**
+     * Default validation rules.
+     *
+     * @param \Cake\Validation\Validator $validator Validator instance.
+     * @return \Cake\Validation\Validator
+     */
+    public function validationDefault(Validator $validator): Validator
+    {
+        $validator
+            ->integer('id')
+            ->allowEmptyString('id', null, 'create');
+
+        $validator
+            ->scalar('name')
+            ->maxLength('name', 255)
+            ->requirePresence('name', 'create')
+            ->notEmptyString('name');
+
+        $validator
+            ->decimal('price')
+            ->requirePresence('price', 'create')
+            ->notEmptyString('price');
+
+        $validator
+            ->scalar('image_name')
+            ->maxLength('image_name', 255)
+            ->requirePresence('image_name', 'create')
+            ->notEmptyFile('image_name');
+
+        return $validator;
+    }
 }
