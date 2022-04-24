@@ -2,7 +2,7 @@
   <div class="col s12 m6 offset-m3">
     <h1>Reservas</h1>
   </div>
-  <div class="container">
+  <!-- <div class="container"> -->
     <div class="row">
         <div class="input-field col s12">
           <select v-model="form.service">
@@ -54,7 +54,7 @@
      <button v-on:click="reservation()" class="btn waves-effect waves-light" type="submit" name="action">Enviar
       <i class="material-icons right">send</i>
       </button>
-  </div>
+  <!-- </div> -->
   <br>
 </template>
 
