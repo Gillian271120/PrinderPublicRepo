@@ -34,6 +34,7 @@ class Reservation extends Entity
         'clientDni' => true,
         'clientFullname' => true,
         'clientTelephone' => true,
+        'numberClients' => true,
         'service' => true,
         'date' => true,
         'clientCreditCard' => true,
@@ -52,6 +53,7 @@ class Reservation extends Entity
             'date' => $this->date,
             'clientCreditCard' => $this->clientCreditCard,
             'subtotal' => $this->subtotal,
+            'numberClients' => $this->numberClients,
             'created' => $this->created,
             'modified' => $this->modified,
         ];

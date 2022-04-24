@@ -61,6 +61,7 @@ class ClientsTable extends Table
         $validator
             ->scalar('Dni')
             ->maxLength('Dni', 9)
+            ->minLength('Dni', 9)
             ->requirePresence('Dni', 'create')
             ->notEmptyString('Dni');
 
@@ -72,12 +73,15 @@ class ClientsTable extends Table
 
         $validator
             ->scalar('Telephone')
-            ->maxLength('Telephone', 255)
+            ->maxLength('Telephone', 15)
+            ->minLength('Telephone', 9)
             ->requirePresence('Telephone', 'create')
             ->notEmptyString('Telephone');
 
         $validator
             ->requirePresence('creditCard', 'create')
+            ->minLength('creditCard',12)
+            ->maxLength('creditCard',12)
             ->notEmptyString('creditCard');
 
         return $validator;

@@ -24,6 +24,7 @@
                     echo $this->Form->control('date');
                     echo $this->Form->control('clientCreditCard');
                     echo $this->Form->control('subtotal');
+                    echo $this->Form->control('numberClients');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

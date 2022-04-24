@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace App\Service;
 
+use App\Service\Reservation\CabinsData;
 use App\Service\Reservation\StoreData;
 use Cake\Utility\Hash;
 use CakeDC\Api\Service\Service;
@@ -34,6 +35,8 @@ class ReservationService extends Service
         // Cambiar POST o PUT según querramos
         $methods = ['method' => ['POST'], 'mapCors' => true];
         $this->mapAction('store',StoreData::class , $methods);
+        $this->mapAction('cabins',CabinsData::class , $methods);
+
     }
 
     /**

@@ -27,7 +27,7 @@ export default {
       products: [],
     }
   },
-  created: function(){
+  beforeCreate: function(){
       axios.post('/api/products/data').then((result) => {
         this.products = result.data.data;
       }).catch((err) => {

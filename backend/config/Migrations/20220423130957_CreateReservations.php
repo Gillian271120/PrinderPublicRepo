@@ -50,6 +50,10 @@ class CreateReservations extends AbstractMigration
             'precision' => 10,
             'scale' => 2,
         ]);
+        $table->addColumn('numberClients', 'integer', [
+            'default' => null,
+            'null' => false,
+        ]);
         $table->addColumn('created', 'datetime', [
             'default' => null,
             'null' => false,

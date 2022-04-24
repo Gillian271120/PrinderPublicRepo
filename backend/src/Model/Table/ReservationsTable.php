@@ -61,6 +61,7 @@ class ReservationsTable extends Table
         $validator
             ->scalar('clientDni')
             ->maxLength('clientDni', 9)
+            ->minLength('clientDni', 9)
             ->requirePresence('clientDni', 'create')
             ->notEmptyString('clientDni');
 
@@ -73,6 +74,7 @@ class ReservationsTable extends Table
         $validator
             ->scalar('clientTelephone')
             ->maxLength('clientTelephone', 15)
+            ->minLength('clientTelephone', 9)
             ->requirePresence('clientTelephone', 'create')
             ->notEmptyString('clientTelephone');
 
@@ -84,12 +86,19 @@ class ReservationsTable extends Table
 
         $validator
             ->requirePresence('clientCreditCard', 'create')
+            ->maxLength('clientCreditCard', 12)
+            ->minLength('clientCreditCard', 12)
             ->notEmptyString('clientCreditCard');
 
         $validator
             ->decimal('subtotal')
             ->requirePresence('subtotal', 'create')
             ->notEmptyString('subtotal');
+        $validator
+            ->integer('numberClients')
+            ->maxLength('numberClients',3)
+            ->requirePresence('numberClients', 'create')
+            ->notEmptyString('numberClients');
 
         return $validator;
     }

@@ -47,6 +47,10 @@
                     <td><?= $this->Number->format($reservation->subtotal) ?></td>
                 </tr>
                 <tr>
+                    <th><?= __('NumberClients') ?></th>
+                    <td><?= $this->Number->format($reservation->numberClients) ?></td>
+                </tr>
+                <tr>
                     <th><?= __('Date') ?></th>
                     <td><?= h($reservation->date) ?></td>
                 </tr>

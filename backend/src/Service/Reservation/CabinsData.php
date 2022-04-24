@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 
-namespace App\Service\Products;
+namespace App\Service\Reservation;
 
 use Cake\ORM\TableRegistry;
 use CakeDC\Api\Service\Action\Action;
@@ -12,7 +12,7 @@ use CakeDC\Api\Service\Action\Action;
  *
  * @package CakeDC\Api\Service\Action
  */
-class DataAction extends Action
+class CabinsData extends Action
 {
 
     /**
@@ -24,8 +24,8 @@ class DataAction extends Action
      */
     public function execute()
     { 
-        $productTable = TableRegistry::getTableLocator()->get('products');
-        return $productTable->find()->toArray(); 
+        $cabinsTable = TableRegistry::getTableLocator()->get('cabins');
+        return $cabinsTable->find()->toArray(); 
     }
 
 }

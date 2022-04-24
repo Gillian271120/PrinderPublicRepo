@@ -19,6 +19,7 @@
                     <th><?= $this->Paginator->sort('date') ?></th>
                     <th><?= $this->Paginator->sort('clientCreditCard') ?></th>
                     <th><?= $this->Paginator->sort('subtotal') ?></th>
+                    <th><?= $this->Paginator->sort('numberClients') ?></th>
                     <th><?= $this->Paginator->sort('created') ?></th>
                     <th><?= $this->Paginator->sort('modified') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
@@ -35,6 +36,7 @@
                     <td><?= h($reservation->date) ?></td>
                     <td><?= $this->Number->format($reservation->clientCreditCard) ?></td>
                     <td><?= $this->Number->format($reservation->subtotal) ?></td>
+                    <td><?= $this->Number->format($reservation->numberClients) ?></td>
                     <td><?= h($reservation->created) ?></td>
                     <td><?= h($reservation->modified) ?></td>
                     <td class="actions">
