@@ -8,6 +8,8 @@
       <i class="medium material-icons">chevron_left</i>
       <a class="carousel-item" href="/services"><img src="https://japonpop.japonshop.com/wp-content/uploads/2017/10/expendedora11.png"></a>
       <a class="carousel-item" href="/services"><img src="https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2019/10/04/15702177059724.jpg"></a>
+      <a class="carousel-item" href="/services"><img src="https://es.bam-karaokebox.com/build/images/bam-karaoke-box-concept-salles-privees-karaoke.jpg"></a>
+      <a class="carousel-item" href="/services"><img src="https://bwgroup.es/wp-content/uploads/2016/06/cin3.jpg"></a>
       <i class="medium material-icons" id="chevron_right">chevron_right</i>
     </div>
   </div>
@@ -82,7 +84,8 @@ document.addEventListener('DOMContentLoaded', function() {
       margin: 4vh auto 4vh auto;
     }
     img {
-      min-height: 35vh;
+      min-height: 38vh;
+      max-height: 38vh;
     }
   }
 
