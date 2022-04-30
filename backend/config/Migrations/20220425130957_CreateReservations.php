@@ -20,11 +20,16 @@ class CreateReservations extends AbstractMigration
             'limit' => 9,
             'null' => false,
         ]);
+        $table->addColumn('cabin_id', 'string', [
+            'default' => null,
+            'limit' => 9,
+            'null' => false,
+        ]);
         $table->addColumn('clientFullname', 'string', [
             'default' => null,
             'limit' => 255,
             'null' => false,
-        ]);
+        ])->addForeignKey('cabin_id', 'cabins','id');
         $table->addColumn('clientTelephone', 'string', [
             'default' => null,
             'limit' => 15,

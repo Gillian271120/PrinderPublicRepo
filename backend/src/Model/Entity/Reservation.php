@@ -32,6 +32,7 @@ class Reservation extends Entity
      */
     protected $_accessible = [
         'clientDni' => true,
+        'cabin_id' => true,
         'clientFullname' => true,
         'clientTelephone' => true,
         'numberClients' => true,

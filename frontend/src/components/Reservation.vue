@@ -6,20 +6,20 @@
     <div class="row">
       <!-- <form class="col s12"> -->
         <div class="input-field col s12">
-          <select v-model="form.service" @change="changePrice">
+          <select v-model="form.cabin_id" @change="changePrice">
             <option value="" disabled selected>Escoge una cabina</option>
-            <option value="Cabin 1 person">Cabina de 1 persona: Jessica</option>
-            <option value="Cabin 1 person">Cabina de 1 persona: Charlie</option>
-            <option value="Cabin 1 person">Cabina de 1 persona: Beta</option>
-            <option value="Cabin 3 persons">Cabina de 3 personas: Alpha</option>
-            <option value="Cabin 3 persons">Cabina de 3 personas: Bravo</option>
-            <option value="Cabin 3 persons">Cabina de 3 personas: Jacobs</option>
-            <option value="Cabin 7 persons">Cabina de 7 personas: Chafiras</option>
-            <option value="Cabin 7 persons">Cabina de 7 personas: Katherine</option>
-            <option value="Cabin 7 persons">Cabina de 7 personas: Metic</option>
-            <option value="Cabin 12 persons">Cabina de 12 personas: Sinhue</option>
-            <option value="Cabin 12 persons">Cabina de 12 personas: Martis</option>
-            <option value="Cabin 18 persons">Cabina de 18 personas: Leloy</option>
+            <option value="1">Cabina de 1 persona: Jessica</option>
+            <option value="2">Cabina de 1 persona: Charlie</option>
+            <option value="3">Cabina de 1 persona: Beta</option>
+            <option value="4">Cabina de 3 personas: Alpha</option>
+            <option value="5">Cabina de 3 personas: Bravo</option>
+            <option value="6">Cabina de 3 personas: Jacobs</option>
+            <option value="7">Cabina de 7 personas: Chafiras</option>
+            <option value="8">Cabina de 7 personas: Katherine</option>
+            <option value="9">Cabina de 7 personas: Metic</option>
+            <option value="10">Cabina de 12 personas: Sinhue</option>
+            <option value="11">Cabina de 12 personas: Martis</option>
+            <option value="12">Cabina de 18 personas: Leloy</option>
           </select>
           <label>Cabina</label>
           <small>En nuestro establecimiento las cabinas tienen nombres, correspondientes a las vistas arriba</small>
@@ -89,7 +89,7 @@ export default {
         clientFullname: '',
         clientTelephone:'',
         clientDni:'',
-        service:'',
+        cabin_id:'',
         subtotal:'',
         clientCreditCard:'',
         date:'',
@@ -103,8 +103,12 @@ export default {
       axios.post('/api/reservation/store', this.form).then((result) => {
         console.log(result);
          if(result.data.status === "success"){
-          M.toast({html: 'Reserva realizada correctamente para el día '+ this.form.date 
-          +' a nombre de ' + this.form.clientFullname})
+           if(result.data.data === "Fecha no disponible"){
+            M.toast({html: 'Esa fecha de reserva no está disponible, por favor seleccione otro día'})
+           }else{
+            M.toast({html: 'Reserva realizada correctamente para el día '+ this.form.date 
+            +' a nombre de ' + this.form.clientFullname})
+           }
         }else{
           M.toast({html: 'Error de validación, por favor compruebe los datos.'});
         }
@@ -118,7 +122,7 @@ export default {
       }else{
         let pricePerClient = 0;
         this.cabins.forEach(cabin => {
-          if(cabin.type == this.form.service){
+          if(cabin.id == this.form.cabin_id){
             pricePerClient = cabin.price;
           }
         });
