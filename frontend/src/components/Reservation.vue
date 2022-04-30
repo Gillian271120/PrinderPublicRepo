@@ -4,7 +4,7 @@
   </div>
   <!-- <div class="container"> -->
     <div class="row">
-      <!-- <form class="col s12"> -->
+      <form class="col s12" @submit.prevent="reservation">
         <div class="input-field col s12">
           <select v-model="form.cabin_id" @change="changePrice">
             <option value="" disabled selected>Escoge una cabina</option>
@@ -71,7 +71,7 @@
             <i class="material-icons right">send</i>
           </button>
         </div>
-      <!-- </form> -->
+      </form>
   </div>
      
   <!-- </div> -->
@@ -99,7 +99,8 @@ export default {
     }
   },
   methods:{
-    reservation(){
+    reservation(e){
+      e.preventDefault();
       axios.post('/api/reservation/store', this.form).then((result) => {
         console.log(result);
          if(result.data.status === "success"){

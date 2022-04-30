@@ -5,20 +5,15 @@
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### Compilar y ejecutar para desarrollo
 ```
 yarn serve
 ```
 
-### Compiles and minifies for production
+### Compila y minifica los archivos para producción
 ```
 yarn build
 ```
 
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Configuración
+[Configuration Reference](https://cli.vuejs.org/config/).
