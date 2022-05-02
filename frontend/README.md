@@ -1,4 +1,4 @@
-# app
+# Prinder Frontend
 
 ## Project setup
 ```
