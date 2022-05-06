@@ -10,6 +10,9 @@ import Reservation from "../components/Reservation.vue";
 import AboutUs from "../components/AboutUs.vue";
 import Auth from "../cookies/auth";
 import M from "materialize-css";
+/**
+ * Current routes of the website
+ */
 const routes = [
     {
         path: "/",
@@ -66,12 +69,16 @@ const routes = [
         component: PageNotFound,
     },
 ];
- 
+ /**
+  * Create the routes of the website
+  */
 const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),
     routes,
 });
- 
+/**
+ * Before each call checks if need auth or not and redirect on given answer
+ */
 router.beforeEach((to) => {
     if (to.meta.requiresAuth && !Auth.get()) {
         return {
@@ -79,6 +86,9 @@ router.beforeEach((to) => {
         }
     }
 })
+/**
+ * Before each call checks if need auth or not and redirect on given answer
+ */
 router.beforeEach((to) => {
     if (to.meta.onlyNoAuth && Auth.get()) {
         M.toast({html: 'Ya tienes una sesión iniciada'})
@@ -87,5 +97,7 @@ router.beforeEach((to) => {
         }
     }
 })
- 
+/**
+ * Export routes
+ */
 export default router;

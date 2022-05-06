@@ -62,6 +62,12 @@ export default {
     handle(value) {
       this[value.action]()
     },
+    /**
+     * Function to register a user on certain data given in form
+     * 
+     * @param object this.form
+     * @return result
+     */
     register() {
       axios.post('/api/auth/register', this.form).then((result) => {
         console.log(result);
@@ -69,10 +75,15 @@ export default {
         console.error(err);
       })
     },
+    /**
+     * Logins a user with certain data given in form
+     * 
+     * @param object this.form
+     * @return 
+     */
     login() {
       axios.post('/api/auth/jwt_login', this.form).then((result) => {
         Token.set(result.data.data.access_token);
-        console.log(result);
         this.$router.push('/');
       }).catch((err) => {
         console.error(err);

@@ -99,6 +99,11 @@ export default {
     }
   },
   methods:{
+    /**
+     * Method to make a reservation
+     * @param object form
+     * @return result|errorMessage 
+     */
     reservation(e){
       e.preventDefault();
       axios.post('/api/reservation/store', this.form).then((result) => {
@@ -117,6 +122,11 @@ export default {
         console.error(err);
       })
     },
+    /**
+     * Detects when the form changes and changes price input based on results
+     * 
+     * @returns void
+     */
     changePrice(){
       if(isNaN(this.form.numberClients) || this.form.numberClients==""){
         M.toast({html: "Seleccione un número de personas válido para ver el precio final"});
@@ -131,7 +141,10 @@ export default {
       }
     }
 
-  },//TODO Que te deje poner solo el número de personas permitido por cabina de reserva y no menos o más
+  },
+  /**
+   * Gets all current cabins in db
+   */
   beforeCreate: function(){
       axios.post('/api/reservation/cabins').then((result) => {
         if(result.data.status === "success"){
@@ -142,17 +155,4 @@ export default {
       })
   }
 }
-// import M from "materialize-css";
-// document.addEventListener('DOMContentLoaded', function() {
-//     let options = {
-//       minDate: new Date(),
-//       defaultDate:new Date(),
-//       disableWeekends: true,
-//       autoclose:true,
-//       showClearBtn:true,
-//     };
-//     var elems = document.querySelectorAll('.datepicker');
-//     let pepe = M.Datepicker.init(elems,options);
-//     console.log(pepe);
-// });
 </script>

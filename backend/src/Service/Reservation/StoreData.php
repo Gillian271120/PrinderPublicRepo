@@ -17,10 +17,8 @@ class StoreData extends Action
 {
 
     /**
-     * Update remember me and determine redirect url after user identified
+     * Stores a new reservation and client if certain conditions are given
      *
-     * @param array $user user data after identified
-     * @param bool $socialLogin is social login
      * @return array|bool
      */
     public function execute()

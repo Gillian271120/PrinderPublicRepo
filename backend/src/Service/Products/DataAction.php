@@ -16,10 +16,8 @@ class DataAction extends Action
 {
 
     /**
-     * Update remember me and determine redirect url after user identified
+     * Gives all curent products of the db
      *
-     * @param array $user user data after identified
-     * @param bool $socialLogin is social login
      * @return array|bool
      */
     public function execute()

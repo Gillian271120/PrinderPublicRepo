@@ -46,6 +46,9 @@ export default {
     handle(value) {
       this[value.action]();
     },
+    /**
+     * Method to make a petition to register a user based on data
+     */
     register() {
       axios
         .post("/api/auth/register", this.form)
@@ -57,7 +60,11 @@ export default {
         });
     },
   },
-  created: function () {
+  created: 
+  /**
+   * Example function for API practice
+   */
+  function () {
     axios
       .post("/api/home/data" /*Para enviar datos :  , this.title  */)
       .then((result) => {
@@ -69,7 +76,9 @@ export default {
       });
   },
 };
-
+/**
+ * WIP Carrousel
+ */
 document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll(".carousel");
   // var instance = M.Carousel.init(elems, {
@@ -81,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
     fullWidth: true,
   });
 });
+window.CookieConsent.init();
 </script>
 
 <style scoped>

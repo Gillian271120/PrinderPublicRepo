@@ -42,7 +42,8 @@ $cakeDescription = 'Prinder Administration team';
         </div>
         <div class="top-nav-links">
             <?php if(isset($_COOKIE["CookieAuth"])){ ?>
-            <a  href="<?= $this->Url->build('/cabins')?>">Reservas de cabinas</a>
+            <a  href="<?= $this->Url->build('/cabins')?>">Cabinas</a>
+            <a  href="<?= $this->Url->build('/reservations')?>">Reservas</a>
             <a  href="<?= $this->Url->build('/products')?>">Productos</a>
             <a  href="<?= $this->Url->build('/clients')?>">Clientes</a>
             <a  href="<?= $this->Url->build('/users')?>">Usuarios</a>

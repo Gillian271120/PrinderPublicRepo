@@ -16,10 +16,8 @@ class CabinsData extends Action
 {
 
     /**
-     * Update remember me and determine redirect url after user identified
+     * Return all curent registered cabins on DB
      *
-     * @param array $user user data after identified
-     * @param bool $socialLogin is social login
      * @return array|bool
      */
     public function execute()
