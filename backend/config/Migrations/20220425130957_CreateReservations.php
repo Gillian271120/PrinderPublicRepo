@@ -24,12 +24,12 @@ class CreateReservations extends AbstractMigration
             'default' => null,
             'limit' => 9,
             'null' => false,
-        ]);
+        ])->addForeignKey('cabin_id', 'cabins','id');
         $table->addColumn('clientFullname', 'string', [
             'default' => null,
             'limit' => 255,
             'null' => false,
-        ])->addForeignKey('cabin_id', 'cabins','id');
+        ]);
         $table->addColumn('clientTelephone', 'string', [
             'default' => null,
             'limit' => 15,
@@ -44,7 +44,7 @@ class CreateReservations extends AbstractMigration
             'default' => null,
             'null' => false,
         ]);
-        $table->addColumn('clientCreditCard', 'biginteger', [
+        $table->addColumn('clientCreditCard', 'string', [
             'default' => null,
             'limit' => 12,
             'null' => false,

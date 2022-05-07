@@ -34,7 +34,7 @@
                     <td><?= h($reservation->clientTelephone) ?></td>
                     <td><?= h($reservation->service) ?></td>
                     <td><?= h($reservation->date) ?></td>
-                    <td><?= $this->Number->format($reservation->clientCreditCard) ?></td>
+                    <td><?= h($reservation->clientCreditCard) ?></td>
                     <td><?= $this->Number->format($reservation->subtotal) ?></td>
                     <td><?= $this->Number->format($reservation->numberClients) ?></td>
                     <td><?= h($reservation->created) ?></td>

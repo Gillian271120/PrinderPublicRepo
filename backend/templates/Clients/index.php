@@ -28,7 +28,7 @@
                     <td><?= h($client->Dni) ?></td>
                     <td><?= h($client->Fullname) ?></td>
                     <td><?= h($client->Telephone) ?></td>
-                    <td><?= $this->Number->format($client->creditCard) ?></td>
+                    <td><?= h($client->creditCard) ?></td>
                     <td><?= h($client->created) ?></td>
                     <td><?= h($client->modified) ?></td>
                     <td class="actions">
