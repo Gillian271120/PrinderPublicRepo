@@ -1,7 +1,12 @@
 <template>
-  <div class="col s12 m6 offset-m3">
-    <h1>Productos</h1>
-  </div>
+  <div class="head">
+      <img
+        class="head_img"
+        src="https://img.travesiasdigital.com/2018/02/Captura-de-pantalla-2018-02-09-a-las-12.18.27.png"
+        alt="Productos"
+      />
+      <h1 class="head_text">Productos</h1>
+    </div>
   <div class="row">
     <div v-for="product in products" :key="product.id" class="col s6 m4">
       <div class="card hoverable">
@@ -43,3 +48,36 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.head {
+  height: 390px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.head_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.3);
+}
+.head_text {
+  z-index: 1;
+  position: absolute;
+  color: white;
+  font-size: 70px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.card-image img{
+  max-height: 314px;
+  height: 314px;
+  object-fit: cover;
+}
+.card .card-image .card-title {
+  background-color: black;
+}
+</style>

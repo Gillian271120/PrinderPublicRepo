@@ -1,7 +1,12 @@
 <template>
-  <div class="col s12 m6 offset-m3">
-    <h1>Reservas</h1>
-  </div>
+ <div class="head">
+      <img
+        class="head_img"
+        src="https://thumbs.dreamstime.com/b/calendario-con-icono-de-reloj-en-estilo-c%C3%B3mico-agenda-dibujos-animados-vector-ilustraci%C3%B3n-sobre-fondo-aislado-blanco-208230244.jpg"
+        alt="Reserva"
+      />
+      <h1 class="head_text">Reserva</h1>
+    </div>
   <!-- <div class="container"> -->
     <div class="row">
       <form class="col s12" @submit.prevent="reservation">
@@ -156,3 +161,28 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.head {
+  height: 390px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.head_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.3);
+}
+.head_text {
+  z-index: 1;
+  position: absolute;
+  color: white;
+  font-size: 70px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+</style>

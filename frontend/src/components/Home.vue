@@ -1,6 +1,5 @@
 <template>
   <div class="home-picture">
-    <!-- <h1>{{title}}</h1> -->
     <img
       class="picture-image"
       src="https://bwgroup.es/wp-content/uploads/2016/06/cin3.jpg"
@@ -10,14 +9,6 @@
     <a href="#content" class="picture-icon">
       <span class="material-icons">arrow_downward</span>
     </a>
-    <!-- <div class="carousel carousel-slider">
-      <i class="medium material-icons">chevron_left</i>
-      <a class="carousel-item" href="/services"><img src="https://japonpop.japonshop.com/wp-content/uploads/2017/10/expendedora11.png"></a>
-      <a class="carousel-item" href="/services"><img src="https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2019/10/04/15702177059724.jpg"></a>
-      <a class="carousel-item" href="/services"><img src="https://es.bam-karaokebox.com/build/images/bam-karaoke-box-concept-salles-privees-karaoke.jpg"></a>
-      <a class="carousel-item" href="/services"><img src="https://bwgroup.es/wp-content/uploads/2016/06/cin3.jpg"></a>
-      <i class="medium material-icons" id="chevron_right">chevron_right</i>
-    </div> -->
   </div>
   <div class="col s12 orange lighten-5 center" id="content">
     <h4>Reservas</h4>
@@ -33,7 +24,6 @@
 
 <script>
 import axios from "../plugins/axios";
-import M from "materialize-css";
 export default {
   name: "Home",
   props: {},
@@ -60,66 +50,51 @@ export default {
         });
     },
   },
-  created: 
-  /**
-   * Example function for API practice
-   */
-  function () {
-    axios
-      .post("/api/home/data" /*Para enviar datos :  , this.title  */)
-      .then((result) => {
-        console.log(result);
-        this.title = result.data.data.title;
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  },
+  created:
+    /**
+     * Example function for API practice
+     */
+    function () {
+      axios
+        .post("/api/home/data" /*Para enviar datos :  , this.title  */)
+        .then((result) => {
+          console.log(result);
+          this.title = result.data.data.title;
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    },
 };
-/**
- * WIP Carrousel
- */
-document.addEventListener("DOMContentLoaded", function () {
-  var elems = document.querySelectorAll(".carousel");
-  // var instance = M.Carousel.init(elems, {
-  // indicators: true,
-  // fullWidth: true,
-  // });
-  M.Carousel.init(elems, {
-    indicators: true,
-    fullWidth: true,
-  });
-});
 window.CookieConsent.init();
 </script>
 
 <style scoped>
 @media screen and (min-width: 992px) {
-  /* div[class*="carousel"] {
-      max-height: 80vh;
-      max-width: 60vw;
-      margin: 6vh auto 6vh auto;
-    }
-    img {
-      min-height: 60vh;
-    } */
-
   .picture-image {
     height: 830px;
+  }
+  .picture-text {
+    top: 170px;
+    font-size: 70px;
+    width: 70%;
+  }
+  .picture-icon {
+    top: 590px;
   }
 }
 
 @media screen and (max-width: 991px) {
-  /* div[class*="carousel"] {
-      margin: 4vh auto 4vh auto;
-    }
-    img {
-      min-height: 38vh;
-      max-height: 38vh;
-    } */
-
   .picture-image {
     height: 645px;
+  }
+  .picture-text {
+    top: 95px;
+    font-size: 50px;
+    width: 100%;
+  }
+  .picture-icon {
+    top: 430px;
   }
 }
 
@@ -143,14 +118,11 @@ window.CookieConsent.init();
   background-color: black;
   color: white;
   position: absolute;
-  top: 170px;
   z-index: 1;
   padding: 40px 0px;
   margin: unset;
-  font-size: 70px;
   font-weight: bold;
   opacity: 85%;
-  width: 70%;
   text-align: center;
   border: white solid;
   border-width: 4px 0;
@@ -162,7 +134,6 @@ window.CookieConsent.init();
   color: white;
   z-index: 1;
   font-size: 36px;
-  top: 590px;
 }
 
 .picture-icon .material-icons {
