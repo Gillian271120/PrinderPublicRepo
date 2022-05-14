@@ -36,7 +36,7 @@
                 </tr>
                 <tr>
                     <th><?= __('CreditCard') ?></th>
-                    <td><?= $this->Number->format($client->creditCard) ?></td>
+                    <td><?= h($client->creditCard) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Created') ?></th>

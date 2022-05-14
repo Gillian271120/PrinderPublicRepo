@@ -40,7 +40,7 @@
                 </tr>
                 <tr>
                     <th><?= __('ClientCreditCard') ?></th>
-                    <td><?= $this->Number->format($reservation->clientCreditCard) ?></td>
+                    <td><?= h($reservation->clientCreditCard) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Subtotal') ?></th>
