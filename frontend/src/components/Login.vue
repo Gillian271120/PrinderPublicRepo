@@ -6,10 +6,12 @@
           <div class="card-content">
             <h3 class="card-title">{{ pageTitle }}</h3>
             <div class="login-form">
-              <label class="label">Name</label>
               <div class="control">
+                <label class="label">Name</label>
                 <input v-model="form.username" class="input" type="text" placeholder="Text input">
+                <label class="label">Password</label>
                 <input v-model="form.password" class="input" type="password" placeholder="password">
+                <label class="label">Confirm Password</label>
                 <input v-model="form.password_confirm" class="input" type="password" placeholder="Confirm password">
               </div>
             </div>
@@ -92,3 +94,43 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .card {
+    margin: 1rem 0 1rem 0;
+  }
+  .card-content {
+    padding: unset;
+  }
+  .card-title {
+    /* background-color: #fff4e2; */
+    background-color: burlywood;    
+    color: white;
+    line-height: 80px !important;
+    height: 90px;
+    margin: 0px !important;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .login-form {
+    padding: 24px;
+  }
+  .card-action {
+    background-color: burlywood;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .card-action button {
+    color: white;
+  }
+  .card-action a {
+    color: white;
+  }
+  .card-action button:hover {
+    background-color: cadetblue;
+  }
+  .card-action a:hover {
+    background-color: cadetblue;  
+  }
+</style>

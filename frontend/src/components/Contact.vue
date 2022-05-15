@@ -55,6 +55,7 @@ iframe {
   margin: 10px 0 3px 0;
 }
 .contacts {
+  height: 63vh;
   display: flex;
   width: 100%;
   justify-content: space-around;

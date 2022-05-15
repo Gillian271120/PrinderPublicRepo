@@ -1,12 +1,12 @@
 <template>
   <div class="head">
-      <img
-        class="head_img"
-        src="https://img.travesiasdigital.com/2018/02/Captura-de-pantalla-2018-02-09-a-las-12.18.27.png"
-        alt="Productos"
-      />
-      <h1 class="head_text">Productos</h1>
-    </div>
+    <img
+      class="head_img"
+      src="https://img.travesiasdigital.com/2018/02/Captura-de-pantalla-2018-02-09-a-las-12.18.27.png"
+      alt="Productos"
+    />
+    <h1 class="head_text">Productos</h1>
+  </div>
   <div class="row">
     <div v-for="product in products" :key="product.id" class="col s6 m4">
       <div class="card hoverable">
@@ -32,20 +32,20 @@ export default {
       products: [],
     };
   },
-  beforeCreate: 
-  /**
-   * Gets all the products from the db
-   */
-  function () {
-    axios
-      .post("/api/products/data")
-      .then((result) => {
-        this.products = result.data.data;
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  },
+  beforeCreate:
+    /**
+     * Gets all the products from the db
+     */
+    function () {
+      axios
+        .post("/api/products/data")
+        .then((result) => {
+          this.products = result.data.data;
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    },
 };
 </script>
 
@@ -72,12 +72,17 @@ export default {
   font-weight: bold;
   letter-spacing: 2px;
 }
-.card-image img{
+.card-image img {
   max-height: 314px;
   height: 314px;
   object-fit: cover;
 }
 .card .card-image .card-title {
   background-color: black;
+}
+@media screen and (max-width: 991px) {
+  .card-title {
+    font-size: 18px;
+  }
 }
 </style>
