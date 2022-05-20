@@ -11,19 +11,29 @@
       referrerpolicy="no-referrer-when-downgrade"
     ></iframe>
     <div class="contacts">
+      <h4 class="title">Informaciones de Contactos</h4>
       <div class="contact">
         <h5>Dirección</h5>
-        <p>Calle de Sta Rosalía, 54<br />Santa Cruz de Tenerife<br />España</p>
+        <p>
+          <span class="material-icons">place</span>
+          Calle de Sta Rosalía, 54<br />Santa Cruz de Tenerife<br />España
+          <span class="timetable">Horario de 13:00 a 03:00</span>
+        </p>
       </div>
       <div class="contact">
         <h5>Teléfono</h5>
-        <p>922922922<br />622622622</p>
+        <p>
+          <span class="material-icons">call</span>922922922<br />622622622
+          <span class="timetable">Horario de 13:00 a 00:00</span>
+        </p>
       </div>
       <div class="contact">
         <h5>Correo Electrónico</h5>
-        <a>j@prinderenjoy.es</a>
-        <br />
-        <a>g@prinderenjoy.es</a>
+        <p>
+          <span class="material-icons">mail</span>
+          <a>j@prinderenjoy.es</a>
+          <a>g@prinderenjoy.es</a>
+        </p>
       </div>
     </div>
   </div>
@@ -40,6 +50,17 @@ export default {
   .contacts {
     width: 15%;
   }
+  .contact p {
+    height: 150px;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+    padding: 16px 60px;
+    flex-direction: row;
+  }
+  .timetable {
+    right: 60px;
+  }
 }
 @media screen and (max-width: 991px) {
   .contacts {
@@ -50,23 +71,67 @@ export default {
   .contact {
     margin-bottom: 20px;
   }
+  .title {
+    text-align: center;
+    line-height: 40px;
+  }
+  .contact h5 {
+    text-align: center;
+  }
+  .contact p {
+    height: auto;
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px 48px;
+  }
+  .timetable {
+    display: none;
+  } 
 }
 iframe {
   margin: 10px 0 3px 0;
 }
 .contacts {
-  height: 63vh;
   display: flex;
+  flex-direction: column;
   width: 100%;
-  justify-content: space-around;
-  padding: 20px 0 50px 0;
   background-color: #fff4e2;
+  padding: 50px 0;
+  gap: 40px;
+}
+.title {
+  width: 80%;
+  margin: 0 auto;
+  font-weight: bold;
 }
 .contact {
-  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
 }
 .contact h5 {
   font-weight: bold;
-  text-decoration: underline;
+  margin: unset;
+  background: silver;
+  color: white;
+  padding: 16px 60px;
+}
+.contact p {
+  background-color: white;
+  margin: unset;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+.material-icons {
+    color: mediumturquoise;
+    font-size: 70px;
+}
+.timetable {
+  font-size: 16px;
+  color: silver;
+  position: absolute;
+  font-style: oblique;
 }
 </style>
